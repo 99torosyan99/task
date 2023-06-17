@@ -1,0 +1,14 @@
+.delete-button,
+.edit-button {
+    top: 10px;
+    right: 20px;
+    z-index: 100;
+    border: 0;
+    background-color: inherit;
+    cursor: pointer;
+    position: absolute;
+}
+
+.edit-button {
+    right: 50px;
+  }

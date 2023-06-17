@@ -1,0 +1,34 @@
+.edit {
+    width: 100%;
+    height: calc(100vh - 80px);
+    text-align: center;
+    padding: 20px;
+   
+}
+
+.edit__title {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.edit-form {
+    width: 200px;
+    display: flex;
+    flex-direction: column; 
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.edit-form__item {
+   margin-bottom: 10px;
+   width: 100%;
+}
+
+.edit-form__input {
+    border-radius: 6px;
+    padding: 6px;
+    width: 100%;
+    border: 1px solid #000;
+}
+
+

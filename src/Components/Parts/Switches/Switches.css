@@ -1,0 +1,47 @@
+.switches {
+}
+
+.switches-content {
+  margin: 0 auto;
+  width: 130px;
+  position: relative;
+  padding: 5px;
+}
+
+.switches-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.switches-carousel {
+  display: flex;
+  padding: 5px;
+  font-size: 20px;
+  gap: 10px;
+  transition: .5s all;
+}
+
+.switches__item {
+  border: 0;
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 50%;
+  background-color: inherit;
+  border: 1px solid #ca7804;
+  cursor: pointer;
+}
+
+.switches__next,
+.switches__prev {
+  position: absolute;
+  top: 16px;
+  cursor: pointer;
+}
+
+.switches__next {
+  right: -20px;
+}
+
+.switches__prev {
+  left: -20px;
+}
