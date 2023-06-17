@@ -5,7 +5,7 @@ import { giveEmployee } from "../../Redux/dataSlice/dataSlice";
 import { giveTask } from "../../Redux/tasksSlice/tasksSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
-import MoonLoader from "react-spinners/MoonLoader";
+
 
 export default function Employee() {
   const id = useParams().id;
@@ -42,7 +42,7 @@ export default function Employee() {
               <span>Start date: {elem.startDate}</span>
               <span>End date: {elem.endDate}</span>
             </div>
-          )): <div className="loader">  <MoonLoader /></div>}
+          )): ''}
         </div>
       </div>
     </div>

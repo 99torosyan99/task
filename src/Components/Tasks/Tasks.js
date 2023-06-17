@@ -15,7 +15,6 @@ import Validation from "../../Helpers/Validation";
 import changeDate from "../../Helpers/changeDate";
 import MoonLoader from "react-spinners/MoonLoader";
 
-
 import "./Tasks.css";
 
 export default function Tasks() {

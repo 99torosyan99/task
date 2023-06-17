@@ -61,7 +61,7 @@ export default function Employees() {
     <div className="employees">
       <div className="container">
         <div className="employees-content">
-          {data.length && data[ind] ?
+          {data.length ? data[ind] ? (
             data[ind].map((elem) => {
               return (
                 <div className="employees-content__item" key={elem.id}>
@@ -94,7 +94,12 @@ export default function Employees() {
                   />
                 </div>
               );
-            }) :  <div className="loader">  <MoonLoader /></div>}
+            })
+          ) : (
+            <div className="loader">
+              <MoonLoader />
+            </div>
+          ) : ''}
         </div>
         <Switches setInd={setInd} data={data} />
       </div>
