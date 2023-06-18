@@ -3,12 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import DeleteEdit from "../Parts/DeleteEdit/DeleteEdit";
-import { deleteEmployee } from "../../Redux/dataSlice/dataSlice";
+import {  deleteEmployee } from "../../Redux/dataSlice/dataSlice";
 import { useDispatch } from "react-redux";
 
 
-export default function EmployeesItem({elem}) {
+
+export default function EmployeesItem({elem,prop}) {
   const dispatch = useDispatch()
+
   return (
     <div className="employees-content__item" key={elem.id}>
       <Link to={`/employees/employ/${elem.id}`} className="employees-link">
@@ -27,7 +29,8 @@ export default function EmployeesItem({elem}) {
         </div>
       </Link>
       <DeleteEdit
-        elem={elem}
+        elem={{...elem,funcInd:1}}
+        prop={prop}
         func={() => dispatch(deleteEmployee(elem.id))}
         link={"/employees/edit"}
       />

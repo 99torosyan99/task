@@ -45,11 +45,14 @@ export default function Tasks() {
       e.target.reset();
     }
   }
+
+  
+
   const prop = [
-    { type: "text", name: "Name" },
-    { type: "text", name: "Description" },
-    { type: "date", name: "Date start" },
-    { type: "date", name: "Date end" },
+    { type: "text", name: "Name",valName:'name' },
+    { type: "text", name: "Description",valName:'description' },
+    { type: "date", name: "Date start",valName:'startDate' },
+    { type: "date", name: "Date end",valName:'endDate' },
   ];
 
   useEffect(() => {
@@ -63,7 +66,7 @@ export default function Tasks() {
         <div className="tasks-content">
           {tasks.length && tasks[ind] ? 
             tasks[ind].map((elem) => {
-              return <TasksItem  elem={elem}/>;
+              return <TasksItem  elem={elem} prop={prop}/>;
             })
            : 
             <div className="loader">

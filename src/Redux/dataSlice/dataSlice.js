@@ -71,7 +71,7 @@ const dataSlice = createSlice({
       })
       .addCase(changeEmployee.fulfilled, (state, action) => {
         const ind = state.findIndex((elem) => elem.id == action.payload.id);
-        state[ind] = action.payload.editObj;
+        state[ind] = {...action.payload.editObj,id:action.payload.id};
         return state;
       })
       .addCase(giveEmployee.fulfilled, (_, action) => {

@@ -40,7 +40,7 @@ export default function Employee() {
               <span className="employee-task__name">Name: {elem.name}</span>
               <span className="employee-task__description">Description: {elem.description}</span>
               <span className="employee-task__start">Start date: {elem.startDate}</span>
-              <span className="employee-tast__end">End date: {elem.endDate}</span>
+              <span className="employee-task__end">End date: {elem.endDate}</span>
             </div>
           )): ''}
         </div>

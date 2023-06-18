@@ -11,17 +11,20 @@ import Validation from "../../Helpers/Validation";
 import MoonLoader from "react-spinners/MoonLoader";
 import EmployeesItem from "./EmployeesItem";
 
+
 import "./Employees.css";
+
 
 
 export default function Employees() {
   const dispatch = useDispatch();
   const [ind, setInd] = useState(0);
+
   const prop = [
-    { type: "text", name: "Name" },
-    { type: "text", name: "Surname" },
-    { type: "text", name: "Email" },
-    { type: "text", name: "Position" },
+    { type: "text", name: "Name",valName:'name' },
+    { type: "text", name: "Surname" ,valName:'surname'},
+    { type: "text", name: "Email" ,valName:'email'},
+    { type: "text", name: "Position" ,valName:'position'},
   ];
 
   const data = useSelector((data) => filterData(data.data, 4));
@@ -58,7 +61,7 @@ export default function Employees() {
         <div className="employees-content">
           {data.length && data[ind] ? 
               data[ind].map((elem) => {
-                return <EmployeesItem elem={elem} />;
+                return <EmployeesItem elem={elem} prop={prop} />;
               })
              : 
               <div className="loader">
