@@ -11,15 +11,6 @@ export default function EditTask() {
   const loc = useLocation();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    try {
-      if (!loc.state.elem) {
-        throw new Error("errrooor");
-      }
-    } catch (err) {
-      nav("/employees");
-    }
-  });
   const [text, setText] = useState(loc.state.elem);
 
   function edit(e) {

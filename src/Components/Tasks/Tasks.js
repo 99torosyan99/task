@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  deleteTask,
   getTasks,
   postTasks,
 } from "../../Redux/tasksSlice/tasksSlice";
 import TaskSearch from "./TaskSearch";
 import Switches from "../Parts/Switches/Switches";
-import DeleteEdit from "../Parts/DeleteEdit/DeleteEdit";
 import Add from "../Form/Add";
 import { getEmployees } from "../../Redux/dataSlice/dataSlice";
 import filterData from "../../Helpers/filterData";
 import Validation from "../../Helpers/Validation";
 import changeDate from "../../Helpers/changeDate";
 import MoonLoader from "react-spinners/MoonLoader";
+import TasksItem from "./TasksItem";
 
 import "./Tasks.css";
+
 
 export default function Tasks() {
   const tasks = useSelector((data) => filterData(data.tasks, 6));
@@ -56,33 +56,20 @@ export default function Tasks() {
     dispatch(getTasks());
     dispatch(getEmployees());
   }, []);
-  console.log(tasks.length);
   return (
     <div className="tasks">
       <div className="container">
         <TaskSearch />
         <div className="tasks-content">
-          {tasks.length && tasks[ind] ? (
+          {tasks.length && tasks[ind] ? 
             tasks[ind].map((elem) => {
-              return (
-                <div className="tasks-content__item" key={elem.id}>
-                  <span>Name: {elem.name}</span>
-                  <span>Description: {elem.description}</span>
-                  <span>Start date: {elem.startDate}</span>
-                  <span>End date: {elem.endDate}</span>
-                  <DeleteEdit
-                    elem={elem}
-                    link={"/tasks/edit"}
-                    func={() => dispatch(deleteTask(elem.id))}
-                  />
-                </div>
-              );
+              return <TasksItem  elem={elem}/>;
             })
-          ) : (
+           : 
             <div className="loader">
               <MoonLoader />
             </div>
-          )}
+            }
         </div>
         <Switches setInd={setInd} data={tasks} />
         <Add title={"New task"} prop={prop} func={addTask}>

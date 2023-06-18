@@ -2,24 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { changeEmployee } from "../../Redux/dataSlice/dataSlice";
+import Validation from "../../Helpers/Validation";
 
 import "./Edit.css";
-import Validation from "../../Helpers/Validation";
+
 
 export default function EditEmployee() {
   const nav = useNavigate();
   const loc = useLocation();
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    try {
-      if (!loc.state.elem) {
-        throw new Error("errrooor");
-      }
-    } catch (err) {
-      nav("/employees");
-    }
-  });
 
   const [text, setText] = useState(loc.state.elem);
 

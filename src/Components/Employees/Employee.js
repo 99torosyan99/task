@@ -37,10 +37,10 @@ export default function Employee() {
         <div className="employee-task">
           {task.length ? task.map((elem) => (
             <div className="employee-task__item" key={elem.id}>
-              <span>Name: {elem.name}</span>
-              <span>Description: {elem.description}</span>
-              <span>Start date: {elem.startDate}</span>
-              <span>End date: {elem.endDate}</span>
+              <span className="employee-task__name">Name: {elem.name}</span>
+              <span className="employee-task__description">Description: {elem.description}</span>
+              <span className="employee-task__start">Start date: {elem.startDate}</span>
+              <span className="employee-tast__end">End date: {elem.endDate}</span>
             </div>
           )): ''}
         </div>
