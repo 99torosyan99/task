@@ -26,12 +26,8 @@ export default function Tasks() {
   function addTask(e) {
     e.preventDefault();
 
-    const name = e.target[0];
-    const description = e.target[1];
-    const startDate = e.target[2];
-    const endDate = e.target[3];
-    const id = e.target[4];
-
+    const [name, description, startDate, endDate, id] = e.target;
+    
     const task = {
       name: name.value,
       description: description.value,
@@ -46,11 +42,12 @@ export default function Tasks() {
       Validation.checkSelect(id)
     ) {
       dispatch(postTasks(task));
+      e.target.reset();
     }
   }
   const prop = [
     { type: "text", name: "Name" },
-    { type: "text", name: "description" },
+    { type: "text", name: "Description" },
     { type: "date", name: "Date start" },
     { type: "date", name: "Date end" },
   ];
@@ -59,14 +56,13 @@ export default function Tasks() {
     dispatch(getTasks());
     dispatch(getEmployees());
   }, []);
-
+  console.log(tasks.length);
   return (
     <div className="tasks">
       <div className="container">
         <TaskSearch />
         <div className="tasks-content">
-          {tasks.length &&
-            tasks[ind] ?
+          {tasks.length && tasks[ind] ? (
             tasks[ind].map((elem) => {
               return (
                 <div className="tasks-content__item" key={elem.id}>
@@ -81,13 +77,19 @@ export default function Tasks() {
                   />
                 </div>
               );
-            }) : <div className="loader">  <MoonLoader /></div>}
+            })
+          ) : (
+            <div className="loader">
+              <MoonLoader />
+            </div>
+          )}
         </div>
         <Switches setInd={setInd} data={tasks} />
         <Add title={"New task"} prop={prop} func={addTask}>
           <div className="add-form__item">
+            <label htmlFor="select">Choose an employee</label>
             <select className="add-form__input">
-              <option>---</option>
+              <option></option>
               {data.length &&
                 data.map((elem) => {
                   return (

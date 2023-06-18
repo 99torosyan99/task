@@ -13,7 +13,6 @@ import DeleteEdit from "../Parts/DeleteEdit/DeleteEdit";
 import Add from "../Form/Add";
 import filterData from "../../Helpers/filterData";
 import Validation from "../../Helpers/Validation";
-import { ClipLoader } from "react-spinners";
 import MoonLoader from "react-spinners/MoonLoader";
 
 import "./Employees.css";
@@ -35,11 +34,9 @@ export default function Employees() {
 
   function addEmployee(e) {
     e.preventDefault();
-    const name = e.target[0];
-    const surname = e.target[1];
-    const email = e.target[2];
-    const position = e.target[3];
 
+ const [ name,surname,email,position ] = e.target
+ 
     const employee = {
       name: name.value,
       surname: surname.value,
@@ -54,7 +51,10 @@ export default function Employees() {
       Validation.checkInput(position)
     ) {
       dispatch(newEmployee(employee));
+      e.target.reset()
     }
+  
+ 
   }
 
   return (

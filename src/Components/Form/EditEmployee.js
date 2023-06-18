@@ -25,10 +25,8 @@ export default function EditEmployee() {
 
   function edit(e) {
     e.preventDefault();
-    const name = e.target[0];
-    const surname = e.target[1];
-    const email = e.target[2];
-    const position = e.target[3];
+
+    const [name, surname, email, position] = e.target;
 
     const editObj = {
       name:name.value,

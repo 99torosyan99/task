@@ -5,8 +5,7 @@ import { faEdit, faX } from "@fortawesome/free-solid-svg-icons";
 
 import "./DeleteEdit.css";
 
-export default function DeleteEdit({ elem, func, link ,prop}) {
-  
+export default function DeleteEdit({ elem,fr, func, link ,prop}) {
   return (
     <div className="deleteEdit">
       <button className="delete-button" onClick={func}>

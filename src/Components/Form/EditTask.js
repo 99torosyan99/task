@@ -24,11 +24,9 @@ export default function EditTask() {
 
   function edit(e) {
     e.preventDefault();
-    const name = e.target[0];
-    const description = e.target[1];
-    const startDate = e.target[2];
-    const endDate = e.target[3];
 
+    const [name, description, startDate, endDate] = e.target;
+    
     const editObj = {
       name: name.value,
       description: description.value,
@@ -63,7 +61,7 @@ export default function EditTask() {
             name="name"
             value={text.name}
           />
-           <p className='error__messenger'></p>
+          <p className="error__messenger"></p>
         </div>
         <div className="edit-form__item">
           <label>Description</label>
@@ -73,7 +71,7 @@ export default function EditTask() {
             name="description"
             value={text.description}
           />
-           <p className='error__messenger'></p>
+          <p className="error__messenger"></p>
         </div>
         <div className="edit-form__item">
           <label>Date start</label>
@@ -83,7 +81,7 @@ export default function EditTask() {
             name="startDate"
             value={text.startDate}
           />
-           <p className='error__messenger'></p>
+          <p className="error__messenger"></p>
         </div>
         <div className="edit-form__item">
           <label>Date end</label>
@@ -93,7 +91,7 @@ export default function EditTask() {
             name="endDate"
             className="edit-form__input"
           />
-           <p className='error__messenger'></p>
+          <p className="error__messenger"></p>
         </div>
         <input type="submit" value="Edit" className="edit-form__input" />
       </form>

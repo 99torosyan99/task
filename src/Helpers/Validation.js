@@ -33,7 +33,7 @@ export default class Validation {
 
   static checkSelect(sel) {
     const p = sel.nextSibling;
-    if(sel.value == '---') {
+    if(sel.value == '') {
        p.textContent = 'Choose an employee'
        return false
     }else {
