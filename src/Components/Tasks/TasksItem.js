@@ -7,7 +7,7 @@ export default function TasksItem( {elem,prop}) {
     const dispatch = useDispatch()
     
   return (
-    <div className="tasks-content__item" key={elem.id}>
+    <div className="tasks-content__item">
       <span className="task-content__name">Name: {elem.name}</span>
       <span className="task-content__description">
         Description: {elem.description}

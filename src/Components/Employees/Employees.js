@@ -61,7 +61,7 @@ export default function Employees() {
         <div className="employees-content">
           {data.length && data[ind] ? 
               data[ind].map((elem) => {
-                return <EmployeesItem elem={elem} prop={prop} />;
+                return <EmployeesItem elem={elem} key={elem.id} prop={prop} />;
               })
              : 
               <div className="loader">

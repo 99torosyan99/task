@@ -12,7 +12,7 @@ export default function EmployeesItem({elem,prop}) {
   const dispatch = useDispatch()
 
   return (
-    <div className="employees-content__item" key={elem.id}>
+    <div className="employees-content__item">
       <Link to={`/employees/employ/${elem.id}`} className="employees-link">
         <div className="employees-content__icon">
           <FontAwesomeIcon icon={faUser} />

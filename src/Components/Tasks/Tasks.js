@@ -66,7 +66,7 @@ export default function Tasks() {
         <div className="tasks-content">
           {tasks.length && tasks[ind] ? 
             tasks[ind].map((elem) => {
-              return <TasksItem  elem={elem} prop={prop}/>;
+              return <TasksItem  key={elem.id} elem={elem} prop={prop}/>;
             })
            : 
             <div className="loader">
